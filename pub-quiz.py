@@ -13,8 +13,21 @@ quiz_questions = [
         "options": ["A) 3", "B) 4", "C) 5", "D) 22"],
         "answer": "B"
     },
+    {
+        "question": "What colour is a London bus?",
+        "options": ["A) red", "B) blue", "C) green", "D) yellow"],
+        "answer": "A"
+    },
+    {
+        "question": "Grass is green?",
+        "options": ["TRUE", "FALSE"],
+        "answer": "TRUE"
+    },
     # Learners can add more questions here following the same structure
 ]
+
+score = 0
+
 
 # Loop through each question
 for question in quiz_questions:
@@ -23,14 +36,18 @@ for question in quiz_questions:
     for option in question["options"]:
         print(option)
     
-    # Get the user's answer
-    user_answer = input("Your answer (A, B, C, D): ").strip().upper() # Ensuring the input is uppercase for comparison
+    if question == "Grass is green?":
+        user_answer = input("Your answer TRUE or FALSE: ").strip().upper() # Ensuring the input is uppercase for comparison
+    else:
+        user_answer = input("Your answer (A, B, C, D): ").strip().upper() # Ensuring the input is uppercase for comparison
+    
     
     # Check if the answer is correct
     if user_answer == question["answer"]:
-        print("Correct!")
+        score += 1
+        print(f"Correct!")       
     else:
         print(f"Wrong! The correct answer was {question['answer']}.")
 
 # Goodbye message
-print("Thanks for playing the Pub Quiz!")
+print(f"Thanks for playing the Pub Quiz! Your score is {score}")

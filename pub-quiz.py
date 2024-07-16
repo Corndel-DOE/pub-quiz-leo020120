@@ -13,6 +13,11 @@ quiz_questions = [
         "options": ["A) 3", "B) 4", "C) 5", "D) 22"],
         "answer": "B"
     },
+      {
+        "question": "What colour is a London bus?",
+        "options": ["A) red", "B) blue", "C) green", "D) yellow"],
+        "answer": "A"
+    },
     # Learners can add more questions here following the same structure
 ]
 
